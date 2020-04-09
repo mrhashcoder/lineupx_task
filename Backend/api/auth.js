@@ -74,8 +74,7 @@ router.post('/login' , async(req , res , next) => {
                     id:userif.id,
                     name : userif.username
                 };
-                jwt.sign(payload, "secret",{expiresIn : 12345},(err , token) => {
-                    token = "Bearer " + token;
+                jwt.sign(payload, "secret",{expiresIn : 123456},(err , token) => {
                     res.status(200).json({
                         token : token,
                         message : "login successed"

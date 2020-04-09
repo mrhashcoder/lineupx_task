@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const auth = require('./api/auth');
+const job = require('./api/jobApi');
+const candidate = require('./api/candidateApi');
 const passport = require('passport');
 
 
@@ -26,12 +28,12 @@ app.get('/' ,(req , res) => {
     res.send("hello");
 })
 app.use('/' , auth);
-
+app.use('/' , job);
+app.use('/' , candidate);
 
 //Middleware of passport
 app.use(passport.initialize());
 var passportconfig = require('./passport');
-
 passportconfig(passport);
 
 app.listen(3000 , () => {

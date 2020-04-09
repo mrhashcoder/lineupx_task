@@ -2,10 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
-    Id : {
-        type:String,
-        required:true
-    },
     title :{
         type:String,
         required:true
@@ -21,13 +17,7 @@ var jobSchema = new Schema({
     salary:{
         type : Number,
         required:true,
-    },
-    rejected_candidates : {
-        type : [String],
-    },
-    hole_condidate : {
-        type : [String],
-    }   
+    }
 })
 
 
